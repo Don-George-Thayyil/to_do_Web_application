@@ -7,12 +7,12 @@
     <br>
     <div class="row">
         <div class="col-md">
-            <p>Not completed</p>
+            <h4>Not completed</h4>
             {{#each nontasks}}
             <div class="card" style="width:20rem;">
                 <div class="card-body">
-                    <p class="card-title">{{this.task}}</p>
-                    <p class="card-text tex-muted">{{this.desc}}</p>
+                    <h5 class="card-title">{{this.task}}</h5>
+                    <p class="card-text tex-muted" style="background-color: dimgray;">{{this.desc}}</p>
                     <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
                         onclick="return confirm('Do you want to delete?')">Delete</a>
@@ -25,12 +25,11 @@
             <p>Tasks on list: {{c1}}</p>
         </div>
         <div class="col-md">
-            <p>In progress</p>
+            <h4>In progress</h4>
             {{#each intasks}}
             <div class="card" style="width:20rem;">
-                <div class="card-body">
-                    <p class="card-title">{{this.task}}</p>
-                    <p class="card-text">{{this.desc}}</p>
+                <div class="card-body"><h5 class="card-title">{{this.task}}</h5>
+                    <p class="card-text tex-muted" style="background-color: dimgray;">{{this.desc}}</p>
                     <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
                         onclick="return confirm('Do you want to delete?')">Delete</a>
@@ -41,11 +40,11 @@
             <p>Tasks on list: {{c2}}</p>
         </div>
         <div class="col-md">
-            <p>Completed</p>
+            <h4>Completed</h4>
             {{#each comtasks}}
             <div class="card" style="width:20rem;">
                 <div class="card-body">
-                    <p class="card-title">{{this.task}}</p>
+                    <h5 class="card-title">{{this.task}}</h5>
                     <p class="card-text tex-muted">{{this.desc}}</p>
                     <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
