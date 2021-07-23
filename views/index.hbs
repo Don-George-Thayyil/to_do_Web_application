@@ -1,0 +1,60 @@
+<div class="container">
+    <div style="display:grid; justify-content:space-evenly align-content:space-evenly;">
+        <a href="/create" class="btn btn-success">Add Tasks</a>
+        <h5 style="display:grid; justify-content: flex-end;">Total Tasks: {{count}}</h5>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md">
+            <p>Not completed</p>
+            {{#each nontasks}}
+            <div class="card" style="width:20rem;">
+                <div class="card-body">
+                    <p class="card-title">{{this.task}}</p>
+                    <p class="card-text tex-muted">{{this.desc}}</p>
+                    <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
+                    <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
+                        onclick="return confirm('Do you want to delete?')">Delete</a>
+                    {{!-- <a href="/moveToWorking/{{this._id}}" class="card-link">Working</a>
+                    <a href="/moveToComplete/{{this._id}}" class="card-link">Completed</a> --}}
+                </div>
+            </div>
+            {{/each}}
+
+            <p>Tasks on list: {{c1}}</p>
+        </div>
+        <div class="col-md">
+            <p>In progress</p>
+            {{#each intasks}}
+            <div class="card" style="width:20rem;">
+                <div class="card-body">
+                    <p class="card-title">{{this.task}}</p>
+                    <p class="card-text">{{this.desc}}</p>
+                    <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
+                    <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
+                        onclick="return confirm('Do you want to delete?')">Delete</a>
+
+                </div>
+            </div>
+            {{/each}}
+            <p>Tasks on list: {{c2}}</p>
+        </div>
+        <div class="col-md">
+            <p>Completed</p>
+            {{#each comtasks}}
+            <div class="card" style="width:20rem;">
+                <div class="card-body">
+                    <p class="card-title">{{this.task}}</p>
+                    <p class="card-text tex-muted">{{this.desc}}</p>
+                    <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
+                    <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
+                        onclick="return confirm('Do you want to delete?')">Delete</a>
+
+                </div>
+            </div>
+            {{/each}}
+            <p>Tasks on list: {{c3}}</p>
+        </div>
+    </div>
+</div>

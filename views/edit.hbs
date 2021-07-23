@@ -1,0 +1,31 @@
+<h3 style="padding-top:10px; padding-left:10px">Edit Task list</h3>
+<form action="/edit?id={{data._id}}&comp={{data.completion}}" method="POST" style="padding:10px;">
+    {{!-- <label for="task">Task: </label>
+    <input type="text" name="task" id="taskid" value="{{data.task}}">
+    <label for="task">Description: </label>
+    <input type="text" name="desc" id="descid" value="{{data.desc}}">
+    <br> --}}
+    <div class="mb-3">
+        <label for="task" class="form-label"Task:</label>
+        <input type="text" class="form-control" name="task" value="{{data.task}}">
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Description:</label>
+        <input type="text" class="form-control" name="desc" value="{{data.desc}}">
+    </div>
+
+
+    {{!-- check for radio butttons --}}
+
+    <div>
+        <input type="radio" name="completion" value="notCompleted" required>
+        <label for="comletion">Not completed</label>
+        <input type="radio" name="completion" value="inProgress">
+        <label for="comletion">In progress</label>
+        <input type="radio" name="completion" value="completed">
+        <label for="comletion">Completed</label>
+
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
