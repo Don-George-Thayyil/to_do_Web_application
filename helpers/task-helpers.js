@@ -59,19 +59,19 @@ module.exports = {
     editTasks: (id, completion, data) => {
         return new Promise((resolve, reject) => {
             if (completion == "notCompleted") {
-                db.get().collection('notCompTask').updateOne({ _id: objectId(id) }, { $set: { task: data.task } })
+                db.get().collection('notCompTask').updateOne({ _id: objectId(id) }, { $set: { task: data.task },$set:{desc: data.desc}})
                     .then((response) => {
                         resolve(response)
                     })
             }
             else if (completion == "inProgress") {
-                db.get().collection('inProTask').updateOne({ _id: objectId(id) }, { $set: { task: data.task } })
+                db.get().collection('inProTask').updateOne({ _id: objectId(id) }, { $set: { task: data.task } ,$set:{desc: data.desc} })
                     .then((response) => {
                         resolve(response)
                     })
             }
             else {
-                db.get().collection('completeTask').updateOne({ _id: objectId(id) }, { $set: { task: data.task } })
+                db.get().collection('completeTask').updateOne({ _id: objectId(id) }, { $set: { task: data.task } ,$set:{desc: data.desc} })
                     .then((response) => {
                         resolve(response)
                     })

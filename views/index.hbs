@@ -12,7 +12,7 @@
             <div class="card" style="width:20rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{this.task}}</h5>
-                    <p class="card-text tex-muted" style="background-color: dimgray;">{{this.desc}}</p>
+                    <p class="card-text tex-muted" ">{{this.desc}}</p>
                     <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
                         onclick="return confirm('Do you want to delete?')">Delete</a>
@@ -29,7 +29,7 @@
             {{#each intasks}}
             <div class="card" style="width:20rem;">
                 <div class="card-body"><h5 class="card-title">{{this.task}}</h5>
-                    <p class="card-text tex-muted" style="background-color: dimgray;">{{this.desc}}</p>
+                    <p class="card-text tex-muted" ">{{this.desc}}</p>
                     <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
                         onclick="return confirm('Do you want to delete?')">Delete</a>

@@ -45,7 +45,7 @@ router.post('/edit/', (req, res) => {
   let data = req.body;
   // console.log(completion)
   if (completion == data.completion) {
-    // console.log("inside this looooooooop!!!!")
+    console.log(completion, data.completion)
     taskHelper.editTasks(taskId, completion, data).then(() => {
       res.redirect('/')
     })
