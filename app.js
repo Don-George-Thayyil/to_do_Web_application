@@ -12,8 +12,9 @@ db.connect((err)=>
 )
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var homeRouter = require('./routes/home');
 var createRouter = require('./routes/create');
+var countRouter = require('./routes/count');
 
 var app = express();
 
@@ -28,9 +29,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/create', createRouter);
+app.use('/user/getTaskList', indexRouter);
+app.use('/', homeRouter);
+app.use('/user/addList', createRouter);
+app.use('/user/taskCounts', countRouter)
 
 
 // catch 404 and forward to error handler

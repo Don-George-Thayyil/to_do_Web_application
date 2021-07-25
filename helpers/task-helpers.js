@@ -20,18 +20,25 @@ module.exports = {
             })
         }
     },
+    get_count: ()=> {
+        return new Promise(async(resolve, reject)=>{
+            let count1 = await db.get().collection('notCompTask').count()
+            let count2 = await db.get().collection('inProTask').count()
+            let count3 = await db.get().collection('completeTask').count()
+            let count = count1+count2+count3;
+            data = [count,count1,count2,count3]
+            resolve(data)
+        })
+    },
     getTasks: () => {
         return new Promise(async (resolve, reject) => {
             let nontasks = await db.get().collection('notCompTask').find().toArray()
             let intasks = await db.get().collection('inProTask').find().toArray()
             let comtasks = await db.get().collection('completeTask').find().toArray()
 
-            let count1 = await db.get().collection('notCompTask').count()
-            let count2 = await db.get().collection('inProTask').count()
-            let count3 = await db.get().collection('completeTask').count()
-            let count = count1+count2+count3;
+            
             // console.log(count)
-            let data = [nontasks, intasks, comtasks, count,count1,count2,count3]
+            let data = [nontasks, intasks, comtasks]
             resolve(data)
         })
     },

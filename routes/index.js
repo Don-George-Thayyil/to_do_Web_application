@@ -9,12 +9,8 @@ router.get('/', function (req, res, next) {
     let nontasks = data[0]
     let intasks = data[1]
     let comtasks = data[2]
-    let count = data[3]
-    let c1 = data[4]
-    let c2 = data[5]
-    let c3 = data[6]
     // console.log(data)
-    res.render('index', { nontasks, intasks, comtasks, count, c1, c2, c3});
+    res.render('index', {nontasks, intasks, comtasks});
     // console.log(count)
   })
 })

@@ -9,7 +9,7 @@ router.get('/', (req, res, next)=>{
 router.post('/submit', (req, res, next)=>{
 
     taskHelper.addTask(req.body,(result)=>{
-        res.redirect('/')
+        res.redirect('/user/getTaskList')
     })
 
 //     mongo.connect("mongodb://localhost:27017", (err, client)=>{

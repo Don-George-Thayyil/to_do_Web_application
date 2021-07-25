@@ -1,7 +1,7 @@
 <div class="container">
     <div style="display:grid; justify-content:space-evenly align-content:space-evenly;">
-        <a href="/create" class="btn btn-success">Add Tasks</a>
-        <h5 style="display:grid; justify-content: flex-end;">Total Tasks: {{count}}</h5>
+        <a href="/user/addList" class="btn btn-success">Add Tasks</a>
+        <a href="/user/taskCounts" class="btn btn-primary">Show count</a>
     </div>
 
     <br>
@@ -12,32 +12,30 @@
             <div class="card" style="width:20rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{this.task}}</h5>
-                    <p class="card-text tex-muted" ">{{this.desc}}</p>
-                    <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
+                    <p class="card-text tex-muted">{{this.desc}}</p>
+                    {{!-- <a href="addList/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
-                        onclick="return confirm('Do you want to delete?')">Delete</a>
+                        onclick="return confirm('Do you want to delete?')">Delete</a> --}}
                     {{!-- <a href="/moveToWorking/{{this._id}}" class="card-link">Working</a>
                     <a href="/moveToComplete/{{this._id}}" class="card-link">Completed</a> --}}
                 </div>
             </div>
             {{/each}}
 
-            <p>Tasks on list: {{c1}}</p>
         </div>
         <div class="col-md">
             <h4>In progress</h4>
             {{#each intasks}}
             <div class="card" style="width:20rem;">
                 <div class="card-body"><h5 class="card-title">{{this.task}}</h5>
-                    <p class="card-text tex-muted" ">{{this.desc}}</p>
-                    <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
+                    <p class="card-text tex-muted">{{this.desc}}</p>
+                    {{!-- <a href="addList/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
-                        onclick="return confirm('Do you want to delete?')">Delete</a>
+                        onclick="return confirm('Do you want to delete?')">Delete</a> --}}
 
                 </div>
             </div>
             {{/each}}
-            <p>Tasks on list: {{c2}}</p>
         </div>
         <div class="col-md">
             <h4>Completed</h4>
@@ -46,14 +44,13 @@
                 <div class="card-body">
                     <h5 class="card-title">{{this.task}}</h5>
                     <p class="card-text tex-muted">{{this.desc}}</p>
-                    <a href="/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
+                    {{!-- <a href="addList/edit?id={{this._id}}&comp={{this.completion}}" class="btn btn-primary">Edit</a>
                     <a href="/delete?id={{this._id}}&comp={{this.completion}}" class="btn btn-danger"
-                        onclick="return confirm('Do you want to delete?')">Delete</a>
+                        onclick="return confirm('Do you want to delete?')">Delete</a> --}}
 
                 </div>
             </div>
             {{/each}}
-            <p>Tasks on list: {{c3}}</p>
         </div>
     </div>
 </div>
